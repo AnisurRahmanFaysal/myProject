@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view(uri: '/', view: ('welcome'));
+Route::view(uri: '/', view: 'welcome');
 
 Route::get('/home', function () {
     $items = array('table', 'chair', 'stool');
