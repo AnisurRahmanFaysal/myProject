@@ -75,10 +75,11 @@
 
             </div>
             @foreach($products as $product)
-            @if($products == 'table')
             <h1>{{$product}}</h1>
-            @endif
             @endforeach
+            <h1>For Loop</h1>
+            @for($i=0; $i<3; $i++) <h1>{{$products[$i]}}</h1>
+                @endfor
         </div>
     </div>
 </body>
