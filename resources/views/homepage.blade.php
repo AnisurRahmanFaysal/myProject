@@ -3,9 +3,10 @@
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content">
+        <img src="/images/faysal.jpg" alt="This is Anisur Rahman Faysal">
         <div class="title m-b-md">
 
-            This is my Homepage
+           Hi, I'm {{$username}}. My userId is {{$userid}}. I'm {{$age}} year old.
 
         </div>
         @foreach($products as $product)
