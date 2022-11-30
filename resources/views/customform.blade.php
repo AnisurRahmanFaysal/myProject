@@ -9,6 +9,7 @@
             Hi, I'm Faysal.
 
             <form method="post" action="form-submit">
+                @csrf
                 <div class="form-group">
                     <label>Usename</label>
                     <input type="text" name="username">
@@ -23,8 +24,6 @@
             </form>
 
         </div>
-
-
     </div>
 </div>
 @endsection
