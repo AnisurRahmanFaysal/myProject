@@ -3,19 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view(uri: '/', view: 'welcome');
-
-
-//Route::get('/home', 'App\Http\Controllers\HomeController@index');
 Route::get(uri: '/home', action: 'App\Http\Controllers\HomeController@index');
+Route::get('/home/{userid}/{age}',action:'App\Http\Controllers\HomeController@Show');
 
-
-
-
-Route::get('/home/{userid}/{age}', function ($userid, $age) {
-    $userName = request(key: 'username');
-    $items = array('table', 'chair', 'stool');
-    return view('homepage', ['products' => $items, 'username' => $userName, 'userid' => $userid, 'age' => $age]);
-});
+// Route::get('/home/{userid}/{age}', function ($userid, $age) {
+//     $userName = request(key: 'username');
+//     $items = array('table', 'chair', 'stool');
+//     return view('homepage', ['products' => $items, 'username' => $userName, 'userid' => $userid, 'age' => $age]);
+// });
 
 Route::get('/custom-form', function () {
 
