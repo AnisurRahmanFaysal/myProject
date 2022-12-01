@@ -11,7 +11,12 @@ class HomeController extends Controller
         return view('welcome');
     }
 
-    public function show(){
-        return 'Show function is called!';
+    public function show(Request $request)
+    {
+        $userid = $request->userid;
+        $age = $request->age;
+        $userName = request('username');
+        $products = array('table', 'chair', 'stool');
+        return view('homepage', compact('userid', 'age', 'userName', 'products'));
     }
 }
