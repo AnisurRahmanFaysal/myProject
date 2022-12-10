@@ -14,7 +14,8 @@ class HomeController extends Controller
 
     public function show(Request $request)
     {
-        $readOperation= Product::all();
+        // $readOperation= Product::all();
+        $readOperation = Product::select('name','quantity','price')->where('id','=' ,1)->first();
         //dd($readOperation);
         return $readOperation;
     }
