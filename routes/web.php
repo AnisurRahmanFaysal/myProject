@@ -6,11 +6,10 @@ Route::view(uri: '/', view: 'welcome');
 Route::get(uri: '/home', action: 'App\Http\Controllers\HomeController@index');
 Route::get('/home/{userid}/{age}',action:'App\Http\Controllers\HomeController@Show');
 
-// Route::get('/home/{userid}/{age}', function ($userid, $age) {
-//     
-//     $items 
-//     return view('homepage', ['products' => $items, 'username' => $userName, 'userid' => $userid, 'age' => $age]);
-// });
+Route::get(uri: '/insert', action: 'App\Http\Controllers\HomeController@insertOperation');
+Route::get(uri: '/read', action: 'App\Http\Controllers\HomeController@readOperation');
+Route::get(uri: '/update', action: 'App\Http\Controllers\HomeController@updateOperation');
+Route::get(uri: '/delete', action: 'App\Http\Controllers\HomeController@deleteOperation');
 
 Route::get('/custom-form', function () {
 
