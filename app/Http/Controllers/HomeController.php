@@ -10,7 +10,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return Product::with('many_to_many')->find(1);
+        //return Product::find(1)->user_one_to_many;
+        // return view('welcome');
     }
 
     public function show(Request $request)
@@ -42,5 +44,18 @@ class HomeController extends Controller
         //$product = DB::table('products')->select('name', 'price', 'quantity')->where('id', '=', 6)->get();
         $product = DB::select('select name, price, quantity from products where id = 6');
         return $product;
+    }
+
+    public function updateOperation()
+    {
+        DB::update('UPDATE products SET name= "table2", price=500 where id =6');
+
+        return 'update Complete!';
+    }
+
+    public function deleteOperation()
+    {
+        DB::delete('DELETE FROM products where id = 6');
+        return 'Delete complete';
     }
 }
